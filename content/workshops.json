@@ -1,0 +1,34 @@
+[
+  {
+    "content": "Cet atelier a été conçu pour les personnes qui ont besoin d’une pause dans leur quotidien et qui ont perdu pied avec le monde qui les entoure. Ici, on s’ancre dans son corps, on apprend à vivre l’instant présent et à observer la beauté du monde. Un repas partagé est proposé.",
+    "duration": "De 9h à 12h",
+    "id": "le-corps-et-l-amour-de-soi",
+    "image": "mains-ii",
+    "place": "Saint-Pierre",
+    "title": "Le corps et l’amour de soi"
+  },
+  {
+    "content": "Cet atelier a été conçu pour les personnes qui ont besoin d’une pause dans leur quotidien et qui ont perdu pied avec le monde qui les entoure. Ici, on s’ancre dans son corps, on apprend à vivre l’instant présent et à observer la beauté du monde. Un repas partagé est proposé.",
+    "duration": "De 9h à 12h",
+    "id": "l-inflammation-et-la-charge-mentale",
+    "image": "mains-v",
+    "place": "L'Étang-Salé",
+    "title": "L’inflammation et la charge mentale"
+  },
+  {
+    "content": "Cet atelier a été conçu pour les personnes qui ont besoin d’une pause dans leur quotidien et qui ont perdu pied avec le monde qui les entoure. Ici, on s’ancre dans son corps, on apprend à vivre l’instant présent et à observer la beauté du monde. Un repas partagé est proposé.",
+    "duration": "De 9h à 15h",
+    "id": "la-pleine-conscience",
+    "image": "mains-iii",
+    "place": "Différent à chaque session",
+    "title": "La pleine conscience"
+  },
+  {
+    "content": "Cet atelier a été conçu pour les personnes qui ont besoin d’une pause dans leur quotidien et qui ont perdu pied avec le monde qui les entoure. Ici, on s’ancre dans son corps, on apprend à vivre l’instant présent et à observer la beauté du monde. Un repas partagé est proposé.",
+    "duration": "De 9h à 15h",
+    "id": "tableau-de-visualisation",
+    "image": "mains-iv",
+    "place": "Différent à chaque session",
+    "title": "Tableau de visualisation"
+  }
+]
