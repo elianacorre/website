@@ -1,12 +1,14 @@
 import { convexQuery } from "@convex-dev/react-query";
+import {
+	WorkshopsCombobox as WorkshopsComboboxPrimitive,
+	type WorkshopsComboboxProps as WorkshopsComboboxPrimitiveProps,
+} from "@ec/app/components/workshops-combobox";
 import { api } from "@ec/convex/api";
-import { Combobox, type ComboboxProps } from "@ec/ui/components/combobox";
 import { useQuery } from "@tanstack/react-query";
 
 // ROOT ************************************************************************************************************************************
 export function WorkshopsCombobox(props: WorkshopsComboboxProps) {
-	const { data: workshops } = useQuery(convexQuery(api.workshops.readAll, {}));
-	const options = workshops?.map(({ _id, title }) => ({ label: title, value: _id })) ?? [];
-	return <Combobox options={options} {...props} placeholder="Sélectionner un atelier" />;
+	const { data: entries = [] } = useQuery(convexQuery(api.workshops.readAll, {}));
+	return <WorkshopsComboboxPrimitive entries={entries} {...props} />;
 }
-export type WorkshopsComboboxProps = Omit<ComboboxProps, "options" | "placeholder">;
+export type WorkshopsComboboxProps = Omit<WorkshopsComboboxPrimitiveProps, "entries">;

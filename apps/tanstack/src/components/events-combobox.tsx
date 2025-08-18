@@ -1,12 +1,14 @@
 import { convexQuery } from "@convex-dev/react-query";
+import {
+	EventsCombobox as EventsComboboxPrimitive,
+	type EventsComboboxProps as EventsComboboxPrimitiveProps,
+} from "@ec/app/components/events-combobox";
 import { api } from "@ec/convex/api";
-import { Combobox, type ComboboxProps } from "@ec/ui/components/combobox";
 import { useQuery } from "@tanstack/react-query";
 
 // ROOT ************************************************************************************************************************************
 export function EventsCombobox(props: EventsComboboxProps) {
-	const { data: events } = useQuery(convexQuery(api.events.readAll, {}));
-	const options = events?.map(({ _id, date }) => ({ label: date, value: _id })) ?? [];
-	return <Combobox options={options} {...props} placeholder="Sélectionner un événement" />;
+	const { data: entries = [] } = useQuery(convexQuery(api.events.readAll, {}));
+	return <EventsComboboxPrimitive entries={entries} {...props} />;
 }
-export type EventsComboboxProps = Omit<ComboboxProps, "options" | "placeholder">;
+export type EventsComboboxProps = Omit<EventsComboboxPrimitiveProps, "entries">;

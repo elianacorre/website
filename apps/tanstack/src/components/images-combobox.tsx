@@ -1,12 +1,14 @@
 import { convexQuery } from "@convex-dev/react-query";
+import {
+	ImagesCombobox as ImagesComboboxPrimitive,
+	type ImagesComboboxProps as ImagesComboboxPrimitiveProps,
+} from "@ec/app/components/images-combobox";
 import { api } from "@ec/convex/api";
-import { Combobox, type ComboboxProps } from "@ec/ui/components/combobox";
 import { useQuery } from "@tanstack/react-query";
 
 // ROOT ************************************************************************************************************************************
 export function ImagesCombobox(props: ImagesComboboxProps) {
-	const { data: images } = useQuery(convexQuery(api.images.readAll, {}));
-	const options = images?.map(({ _id, slug }) => ({ label: slug, value: _id })) ?? [];
-	return <Combobox options={options} {...props} placeholder="Sélectionner une image" />;
+	const { data: entries = [] } = useQuery(convexQuery(api.images.readAll, {}));
+	return <ImagesComboboxPrimitive entries={entries} {...props} />;
 }
-export type ImagesComboboxProps = Omit<ComboboxProps, "options" | "placeholder">;
+export type ImagesComboboxProps = Omit<ImagesComboboxPrimitiveProps, "entries">;
