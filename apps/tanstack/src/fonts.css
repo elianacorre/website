@@ -1,0 +1,7 @@
+@import "@fontsource-variable/dancing-script";
+@import "@fontsource-variable/lexend";
+
+:root {
+  --font-base: "Lexend Variable";
+  --font-heading: "Dancing Script Variable";
+}

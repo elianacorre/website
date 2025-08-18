@@ -1,40 +1,31 @@
-# Turborepo kitchen sink starter
+# shadcn/ui monorepo template
 
-This Turborepo starter is maintained by the Turborepo core team.
+This template is for creating a monorepo with shadcn/ui.
 
-This example also shows how to use [Workspace Configurations](https://turborepo.com/docs/core-concepts/monorepos/configuring-workspaces).
+## Usage
 
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest -e kitchen-sink
+```bash
+pnpm dlx shadcn@latest init
 ```
 
-## What's inside?
+## Adding components
 
-This Turborepo includes the following packages and apps:
+To add components to your app, run the following command at the root of your `web` app:
 
-### Apps and Packages
+```bash
+pnpm dlx shadcn@latest add button -c apps/web
+```
 
-- `api`: an [Express](https://expressjs.com/) server
-- `storefront`: a [Next.js](https://nextjs.org/) app
-- `admin`: a [Vite](https://vitejs.dev/) single page app
-- `blog`: a [Remix](https://remix.run/) blog
-- `@repo/eslint-config`: ESLint configurations used throughout the monorepo
-- `@repo/jest-presets`: Jest configurations
-- `@repo/logger`: isomorphic logger (a small wrapper around console.log)
-- `@repo/ui`: a dummy React UI library (which contains `<CounterButton>` and `<Link>` components)
-- `@repo/typescript-config`: tsconfig.json's used throughout the monorepo
+This will place the ui components in the `packages/ui/src/components` directory.
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
+## Tailwind
 
-### Utilities
+Your `tailwind.config.ts` and `globals.css` are already set up to use the components from the `ui` package.
 
-This Turborepo has some additional tools already setup for you:
+## Using components
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Jest](https://jestjs.io) test runner for all things JavaScript
-- [Prettier](https://prettier.io) for code formatting
+To use the components in your app, import them from the `ui` package.
+
+```tsx
+import { Button } from "@ec/ui/components/button"
+```

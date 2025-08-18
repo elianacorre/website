@@ -1,0 +1,21 @@
+{
+	"name": "@ec/domain",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"sideEffects": false,
+	"dependencies": {
+		"convex": "^1.25.4",
+		"date-fns": "^4.1.0",
+		"es-toolkit": "^1.39.10",
+		"zod": "^4.0.17",
+		"zod-convex": "^0.1.0"
+	},
+	"devDependencies": {
+		"@ec/typescript-config": "workspace:*",
+		"typescript": "^5.9.2"
+	},
+	"exports": {
+		"./*": "./src/*.ts"
+	}
+}

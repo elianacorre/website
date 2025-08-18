@@ -1,0 +1,43 @@
+{
+	"name": "@ec/nextjs",
+	"version": "0.0.1",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbopack",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"lint:fix": "next lint --fix",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@clerk/localizations": "^3.21.2",
+		"@clerk/nextjs": "^6.31.1",
+		"@ec/app": "workspace:*",
+		"@ec/convex": "workspace:*",
+		"@ec/domain": "workspace:*",
+		"@ec/ui": "workspace:*",
+		"@hookform/resolvers": "^5.2.1",
+		"@icons-pack/react-simple-icons": "^13.7.0",
+		"@tanstack/react-table": "^8.21.3",
+		"convex": "^1.25.4",
+		"lucide-react": "^0.539.0",
+		"motion": "^12.23.12",
+		"next": "^15.4.6",
+		"next-themes": "^0.4.6",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"react-hook-form": "^7.62.0",
+		"tailwind-variants": "^2.1.0",
+		"zod": "^4.0.17"
+	},
+	"devDependencies": {
+		"@ec/typescript-config": "workspace:*",
+		"@total-typescript/ts-reset": "^0.6.1",
+		"@types/node": "^24.3.0",
+		"@types/react": "^19.1.10",
+		"@types/react-dom": "^19.1.7",
+		"typescript": "^5.9.2"
+	}
+}

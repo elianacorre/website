@@ -1,0 +1,24 @@
+{
+	"name": "@ec/convex",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"sideEffects": false,
+	"scripts": {
+		"dev": "convex dev",
+		"setup": "convex dev --until-success"
+	},
+	"dependencies": {
+		"@ec/domain": "workspace:*",
+		"convex": "^1.25.4",
+		"zod": "^4.0.17",
+		"zod-convex": "^0.1.0"
+	},
+	"devDependencies": {
+		"@total-typescript/ts-reset": "^0.6.1",
+		"typescript": "^5.9.2"
+	},
+	"exports": {
+		"./*": "./src/_generated/*.js"
+	}
+}
