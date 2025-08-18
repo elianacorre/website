@@ -12,14 +12,22 @@ import { convexFrom } from "zod-convex";
 import { zAttendeeFields, zEventFields, zImageFields, zSetFields, zSubscriptionFields, zWorkFields, zWorkshopFields } from "../schemas";
 
 // SCHEMA **********************************************************************************************************************************
+const vAttendees = convexFrom(zAttendeeFields);
+const vEvents = convexFrom(zEventFields);
+const vImages = convexFrom(zImageFields);
+const vSets = convexFrom(zSetFields);
+const vSubscriptions = convexFrom(zSubscriptionFields);
+const vWorks = convexFrom(zWorkFields);
+const vWorkshops = convexFrom(zWorkshopFields);
+
 export const schema = defineSchema({
-	attendees: defineTable(convexFrom(zAttendeeFields)),
-	events: defineTable(convexFrom(zEventFields)).index("by_workshop", ["workshopId"]),
-	images: defineTable(convexFrom(zImageFields)).index("by_slug", ["slug"]),
-	sets: defineTable(convexFrom(zSetFields)).index("by_slug", ["slug"]),
-	subscriptions: defineTable(convexFrom(zSubscriptionFields)).index("by_attendee", ["attendeeId"]),
-	workshops: defineTable(convexFrom(zWorkshopFields)).index("by_slug", ["slug"]),
-	works: defineTable(convexFrom(zWorkFields)).index("by_slug", ["slug"]).index("by_set", ["setId"]),
+	attendees: defineTable(vAttendees),
+	events: defineTable(vEvents).index("by_workshop", ["workshopId"]),
+	images: defineTable(vImages).index("by_slug", ["slug"]),
+	sets: defineTable(vSets).index("by_slug", ["slug"]),
+	subscriptions: defineTable(vSubscriptions).index("by_attendee", ["attendeeId"]),
+	works: defineTable(vWorks).index("by_slug", ["slug"]).index("by_set", ["setId"]),
+	workshops: defineTable(vWorkshops).index("by_slug", ["slug"]),
 });
 
 // TYPES ***********************************************************************************************************************************
