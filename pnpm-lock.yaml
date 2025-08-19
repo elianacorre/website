@@ -26,6 +26,9 @@ importers:
       '@ec/domain':
         specifier: workspace:*
         version: link:../../packages/domain
+      '@total-typescript/ts-reset':
+        specifier: ^0.6.1
+        version: 0.6.1
       convex:
         specifier: ^1.25.4
         version: 1.25.4(@clerk/clerk-react@5.42.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
@@ -36,9 +39,9 @@ importers:
         specifier: ^0.2.3
         version: 0.2.3(convex@1.25.4(@clerk/clerk-react@5.42.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(zod@4.0.17)
     devDependencies:
-      '@total-typescript/ts-reset':
-        specifier: ^0.6.1
-        version: 0.6.1
+      '@types/node':
+        specifier: ^24.3.0
+        version: 24.3.0
       typescript:
         specifier: ^5.9.2
         version: 5.9.2
@@ -337,9 +340,6 @@ importers:
       '@ec/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
-      '@total-typescript/ts-reset':
-        specifier: ^0.6.1
-        version: 0.6.1
       typescript:
         specifier: ^5.9.2
         version: 5.9.2

@@ -6,7 +6,7 @@ export async function generateUploadUrlFor(ctx: MutationCtx) {
 }
 
 export function mapFrom<T extends TableNames, E extends { _id: GenericId<T> }>(entries: (E | null | undefined)[]): EntryMap<T, E> {
-	return new Map(entries.filter(Boolean).map((entry) => [entry._id, entry]));
+	return new Map(entries.filter(Boolean).map((entry) => [entry?._id, entry] as [E["_id"], E]));
 }
 
 // TYPES ***********************************************************************************************************************************

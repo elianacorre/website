@@ -10,12 +10,13 @@
 	},
 	"dependencies": {
 		"@ec/domain": "workspace:*",
+		"@total-typescript/ts-reset": "^0.6.1",
 		"convex": "^1.25.4",
 		"zod": "^4.0.17",
 		"zod-convex": "^0.2.3"
 	},
 	"devDependencies": {
-		"@total-typescript/ts-reset": "^0.6.1",
+		"@types/node": "^24.3.0",
 		"typescript": "^5.9.2"
 	},
 	"exports": {
