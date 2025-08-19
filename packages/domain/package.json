@@ -9,7 +9,7 @@
 		"date-fns": "^4.1.0",
 		"es-toolkit": "^1.39.10",
 		"zod": "^4.0.17",
-		"zod-convex": "^0.2.1"
+		"zod-convex": "^0.2.3"
 	},
 	"devDependencies": {
 		"@ec/typescript-config": "workspace:*",

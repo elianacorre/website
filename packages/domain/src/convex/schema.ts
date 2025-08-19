@@ -8,18 +8,18 @@ import {
 	type TableNamesInDataModel,
 } from "convex/server";
 import type { GenericId } from "convex/values";
-import { convexFrom } from "zod-convex";
+import { convexTableFrom } from "zod-convex";
 import { zAttendeeFields, zEventFields, zImageFields, zSetFields, zSubscriptionFields, zWorkFields, zWorkshopFields } from "../schemas";
 
 // SCHEMA **********************************************************************************************************************************
 export const schema = defineSchema({
-	attendees: defineTable(convexFrom(zAttendeeFields)),
-	events: defineTable(convexFrom(zEventFields)).index("by_workshop", ["workshopId"]),
-	images: defineTable(convexFrom(zImageFields)).index("by_slug", ["slug"]),
-	sets: defineTable(convexFrom(zSetFields)).index("by_slug", ["slug"]),
-	subscriptions: defineTable(convexFrom(zSubscriptionFields)).index("by_attendee", ["attendeeId"]),
-	works: defineTable(convexFrom(zWorkFields)).index("by_slug", ["slug"]).index("by_set", ["setId"]),
-	workshops: defineTable(convexFrom(zWorkshopFields)).index("by_slug", ["slug"]),
+	attendees: defineTable(convexTableFrom(zAttendeeFields)),
+	events: defineTable(convexTableFrom(zEventFields)).index("by_workshop", ["workshopId"]),
+	images: defineTable(convexTableFrom(zImageFields)).index("by_slug", ["slug"]),
+	sets: defineTable(convexTableFrom(zSetFields)).index("by_slug", ["slug"]),
+	subscriptions: defineTable(convexTableFrom(zSubscriptionFields)).index("by_attendee", ["attendeeId"]),
+	works: defineTable(convexTableFrom(zWorkFields)).index("by_slug", ["slug"]).index("by_set", ["setId"]),
+	workshops: defineTable(convexTableFrom(zWorkshopFields)).index("by_slug", ["slug"]),
 });
 
 // TYPES ***********************************************************************************************************************************
