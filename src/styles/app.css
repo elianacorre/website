@@ -10,7 +10,7 @@
   --color-blue-200: oklch(0.829 0.11 219.39);
   --color-blue-300: oklch(0.794 0.129 221.21);
   --color-blue-400: oklch(0.758 0.141 225.4);
-  --color-blue-500: oklch(0.673 0.128 226.31);
+  --color-blue-500: oklch(0.65 0.128 226.31);
   --color-blue-600: oklch(0.578 0.109 226.24);
   --color-blue-700: oklch(0.469 0.087 225.04);
   --color-blue-800: oklch(0.349 0.064 224.39);
@@ -39,7 +39,6 @@
   --color-gray-900: #171717;
   --color-gray-950: oklch(0.145 0 0);
 }
-
 
 :root {
   --font-sans: "Lexend Variable";
@@ -82,7 +81,8 @@
 @theme inline {
   --font-sans: var(--font-sans);
   --font-heading: var(--font-heading);
-  --shadow-header: 0 0 24px rgba(34, 42, 53, 0.06),
+  --shadow-header:
+    0 0 24px rgba(34, 42, 53, 0.06),
     0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04),
     0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05),
     0 1px 0 rgba(255, 255, 255, 0.1) inset;
