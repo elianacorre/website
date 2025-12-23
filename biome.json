@@ -32,18 +32,15 @@
       "recommended": true,
       "style": {
         "useBlockStatements": "off",
-        "noMagicNumbers": "off"
+        "noMagicNumbers": "off",
+        "useConsistentTypeDefinitions": {
+          "level": "warn",
+          "options": {
+            "style": "type"
+          }
+        }
       }
     }
   },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double"
-    }
-  },
-  "extends": [
-    "ultracite/core",
-    "ultracite/react",
-    "ultracite/remix"
-  ]
+  "extends": ["ultracite/core", "ultracite/react", "ultracite/remix"]
 }
