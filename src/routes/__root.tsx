@@ -31,7 +31,7 @@ function RootDocument({ children }: RootDocumentProps) {
         <main className="relative mt-20 flex-1 sm:mt-28 md:mt-40">{children}</main>
         <section className="relative flex justify-between bg-neutral-700 p-4 text-white">
           <span>© 2025 Eliana Corré</span>
-          <Link to="/">Mentions légales</Link>
+          <Link to="/mentions-legales">Mentions légales</Link>
         </section>
         <Scripts />
       </body>

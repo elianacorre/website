@@ -7,7 +7,7 @@ import { Hero, HeroContent } from "@/components/hero";
 import { Section, SectionContent, SectionImage, SectionMain, SectionTitle } from "@/components/section";
 import { WorksGrid } from "@/components/works-grid";
 import { readIndexPage } from "@/functions/pages";
-import { IndexForm } from "./index.-form";
+import { IndexForm } from "./index/-form";
 
 // ROUTE -----------------------------------------------------------------------------------------------------------------------------------
 export const Route = createFileRoute("/")({

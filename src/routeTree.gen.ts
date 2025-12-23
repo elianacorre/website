@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as QuiSuisJeRouteImport } from './routes/qui-suis-je'
 import { Route as OeuvresRouteImport } from './routes/oeuvres'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as OeuvresIndexRouteImport } from './routes/oeuvres.index'
 import { Route as OeuvresSlugRouteImport } from './routes/oeuvres.$slug'
@@ -23,6 +24,11 @@ const QuiSuisJeRoute = QuiSuisJeRouteImport.update({
 const OeuvresRoute = OeuvresRouteImport.update({
   id: '/oeuvres',
   path: '/oeuvres',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -43,6 +49,7 @@ const OeuvresSlugRoute = OeuvresSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/oeuvres': typeof OeuvresRouteWithChildren
   '/qui-suis-je': typeof QuiSuisJeRoute
   '/oeuvres/$slug': typeof OeuvresSlugRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/qui-suis-je': typeof QuiSuisJeRoute
   '/oeuvres/$slug': typeof OeuvresSlugRoute
   '/oeuvres': typeof OeuvresIndexRoute
@@ -57,6 +65,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/oeuvres': typeof OeuvresRouteWithChildren
   '/qui-suis-je': typeof QuiSuisJeRoute
   '/oeuvres/$slug': typeof OeuvresSlugRoute
@@ -64,12 +73,19 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/oeuvres' | '/qui-suis-je' | '/oeuvres/$slug' | '/oeuvres/'
+  fullPaths:
+    | '/'
+    | '/mentions-legales'
+    | '/oeuvres'
+    | '/qui-suis-je'
+    | '/oeuvres/$slug'
+    | '/oeuvres/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/qui-suis-je' | '/oeuvres/$slug' | '/oeuvres'
+  to: '/' | '/mentions-legales' | '/qui-suis-je' | '/oeuvres/$slug' | '/oeuvres'
   id:
     | '__root__'
     | '/'
+    | '/mentions-legales'
     | '/oeuvres'
     | '/qui-suis-je'
     | '/oeuvres/$slug'
@@ -78,6 +94,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
   OeuvresRoute: typeof OeuvresRouteWithChildren
   QuiSuisJeRoute: typeof QuiSuisJeRoute
 }
@@ -96,6 +113,13 @@ declare module '@tanstack/react-router' {
       path: '/oeuvres'
       fullPath: '/oeuvres'
       preLoaderRoute: typeof OeuvresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -137,6 +161,7 @@ const OeuvresRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
   OeuvresRoute: OeuvresRouteWithChildren,
   QuiSuisJeRoute: QuiSuisJeRoute,
 }
