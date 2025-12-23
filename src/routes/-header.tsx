@@ -6,12 +6,11 @@ import { motion, type Transition, useMotionValueEvent, useScroll } from "motion/
 import { type PropsWithChildren, useCallback } from "react";
 import type { ReadRootLayoutProps } from "@/functions/layouts";
 import { setHeaderHoveredId, setIsScrolled, store } from "@/lib/store";
+import { Burger } from "./-header.burger";
 
 // STYLES ----------------------------------------------------------------------------------------------------------------------------------
-const HEADER = {
+export const HEADER = {
   base: cva("fixed z-50", { variants: { isScrolled: { false: "inset-x-0 top-0", true: "inset-x-4 top-5 md:inset-x-20" } } }),
-  burger: cva(`relative p-2 
-    sm:hidden`),
   content: cva(
     `relative mx-auto flex w-full items-center justify-between rounded-full px-4 py-2 
     transition-[box-shadow,background-color] duration-1000
@@ -75,24 +74,7 @@ export function Header({ logoImg, navs, socials }: HeaderProps) {
               <HeaderSocial key={social.key} social={social} />
             ))}
           </div>
-          {/* <Sheet>
-						<SheetTrigger
-							onMouseEnter={() => setHeaderHoveredId("menu")}
-							onClick={() => setHeaderHoveredId(undefined)}
-							className={BURGER()}
-						>
-							{headerHoveredId === "menu" && <motion.div layoutId="hovered" className={STAIN({ intent: "primary" })} />}
-							<MenuIcon className={STAIN_CONTENT()} />
-						</SheetTrigger>
-						<SheetContent>
-							<SheetHeader>
-								<SheetTitle>Are you absolutely sure?</SheetTitle>
-								<SheetDescription>
-									This action cannot be undone. This will permanently delete your account and remove your data from our servers.
-								</SheetDescription>
-							</SheetHeader>
-						</SheetContent>
-					</Sheet> */}
+          <Burger navs={navs} />
         </div>
       </motion.div>
     </motion.header>
