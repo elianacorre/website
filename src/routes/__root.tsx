@@ -9,7 +9,22 @@ import { GridBackground } from "@/components/grid-background";
 // ROUTE -----------------------------------------------------------------------------------------------------------------------------------
 export const Route = createRootRoute({
   head: () => ({
-    meta: [{ charSet: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" }, { title: "TanStack Start Starter" }],
+    meta: [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "Eliana Corré" },
+      {
+        name: "description",
+        content: "Artiste peintre à l'île de la Réunion vous présente l'ensemble de ses collections.",
+      },
+      {
+        name: "keywords",
+        content:
+          "artiste peintre, Eliana Corré, tableaux personnalisés, animaux totems, art contemporain, peinture nature, œuvres sur mesure, art réconfortant, peinture animale, portfolio artiste",
+      },
+      { name: "author", content: "Eliana Corré" },
+      { name: "robots", content: "index, follow" },
+    ],
     links: [{ rel: "stylesheet", href: appCss }],
   }),
   loader: () => readRootLayout(),
