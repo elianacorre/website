@@ -25,7 +25,7 @@ export function IndexForm() {
         },
       });
       form.reset();
-      toast.success("Merci ! Nous avons bien reçu vos réponses.");
+      toast.success("Merci de votre intérêt ! Je vous recontacte très bientôt.");
     },
   });
 
