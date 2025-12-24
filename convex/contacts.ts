@@ -1,0 +1,11 @@
+import { NoOp } from "convex-helpers/server/customFunctions";
+import { zCustomMutation } from "convex-helpers/server/zod4";
+import { zContactCreate } from "@/lib/domain";
+import { mutation } from "./_generated/server";
+
+const zMutation = zCustomMutation(mutation, NoOp);
+
+export const create = zMutation({
+  args: zContactCreate,
+  handler: ({ db }, args) => db.insert("contacts", args),
+});
