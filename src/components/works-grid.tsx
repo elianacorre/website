@@ -13,7 +13,7 @@ export const WORKS_GRID = {
   infos:
     cva(`absolute inset-0 flex flex-col justify-center items-center bg-black/50 text-white transition-opacity duration-300 opacity-0 pointer-events-none
     group-hover/item:opacity-100`),
-  item: cva(`flex-1 transition duration-300 group/item relative inset-shadow-2xs aspect-square w-full overflow-hidden rounded-3xl bg-neutral-200 shadow-lg
+  item: cva(`flex-1 transition duration-300 group/item relative inset-shadow-2xs aspect-square w-full overflow-hidden rounded-3xl bg-neutral-200 shadow-lg cursor-pointer
     hover:scale-none hover:blur-none 
     group-hover/list:scale-[0.9] group-hover/list:blur-sm`),
 };
