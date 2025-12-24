@@ -4,6 +4,14 @@
   "compatibility_date": "2025-09-02",
   "compatibility_flags": ["nodejs_compat"],
   "main": "@tanstack/react-start/server-entry",
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true,
+      "persist": true
+    }
+  },
   "vars": {
     "VITE_CONVEX_URL": "https://kindhearted-fox-911.convex.cloud"
   }
