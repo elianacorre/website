@@ -124,9 +124,9 @@ type SectionProps = PropsWithChildren<
 // CONTENT ---------------------------------------------------------------------------------------------------------------------------------
 export function SectionContent({ children, className, intent, reverse, ...props }: SectionContentProps) {
   return (
-    <p {...props} className={cn(SECTION.content(), className)}>
+    <div {...props} className={cn(SECTION.content(), className)}>
       {children}
-    </p>
+    </div>
   );
 }
 type SectionContentProps = PropsWithChildren<ComponentProps<"p"> & SectionVariants>;

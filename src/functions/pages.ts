@@ -60,3 +60,6 @@ export const readIndexPage = () => ({
 
 // WORKS SET -------------------------------------------------------------------------------------------------------------------------------
 export const readWorksSetPage = (slug: string) => allWorks.map(workFrom).filter((work) => work.set.slug === slug);
+
+// LEGALE NOTICE ---------------------------------------------------------------------------------------------------------------------------
+export const readLegaleNoticePage = () => ({});
