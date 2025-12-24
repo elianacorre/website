@@ -6,11 +6,5 @@
   "main": "@tanstack/react-start/server-entry",
   "vars": {
     "VITE_CONVEX_URL": "https://kindhearted-fox-911.convex.cloud"
-  },
-  "routes": [
-    {
-      "pattern": "elianacorre.com",
-      "custom_domain": true
-    }
-  ]
+  }
 }
